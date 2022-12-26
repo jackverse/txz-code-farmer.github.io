@@ -2131,6 +2131,7 @@ figure.highlight pre .javascript .function {
   overflow: hidden;
   width: 80px;
   height: 80px;
+  display: none;
 }
 .article-sort-item-info {
   -webkit-box-flex: 1;
@@ -2439,6 +2440,7 @@ figure.highlight pre .javascript .function {
   overflow: hidden;
   width: 44%;
   height: 100%;
+  display: none;
 }
 @media screen and (max-width: 768px) {
   #recent-posts > .recent-post-item .post_cover {
@@ -2466,7 +2468,7 @@ figure.highlight pre .javascript .function {
 }
 #recent-posts > .recent-post-item >.recent-post-info {
   padding: 0 40px;
-  width: 57%;
+  width: 100%;
 }
 @media screen and (max-width: 768px) {
   #recent-posts > .recent-post-item >.recent-post-info {
