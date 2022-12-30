@@ -152,7 +152,7 @@
 
 
 <h2 id="部署流程定义"><a href="#部署流程定义" class="headerlink" title="部署流程定义"></a>部署流程定义</h2><ul>
-<li>先跳过流程设计器，直接使用官方案例，使用下方的请假流程</li>
+<li>先跳过流程设计器，直接使用官方案例，使用下方的请假流程<img src="/2022/12/29/flowable-01/demo1.jpg" class="" title="图片加载失败"></li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">这个流程应该已经十分自我解释了。但为了明确起见，说明一下几个要点：</span><br><span class="line"></span><br><span class="line">我们假定启动流程需要提供一些信息，例如雇员名字、请假时长以及说明。当然，这些可以单独建模为流程中的第一步。 但是如果将它们作为流程的“输入信息”，就能保证只有在实际请求时才会建立一个流程实例。否则（将提交作为流程的第一步），用户可能在提交之前改变主意并取消，但流程实例已经创建了。 在某些场景中，就可能影响重要的指标（例如启动了多少申请，但还未完成），取决于业务目标。</span><br><span class="line"></span><br><span class="line">左侧的圆圈叫做启动事件(start event)。这是一个流程实例的起点。</span><br><span class="line"></span><br><span class="line">第一个矩形是一个用户任务(user task)。这是流程中人类用户操作的步骤。在这个例子中，经理需要批准或驳回申请。</span><br><span class="line"></span><br><span class="line">取决于经理的决定，排他网关(exclusive gateway) (带叉的菱形)会将流程实例路由至批准或驳回路径。</span><br><span class="line"></span><br><span class="line">如果批准，则需要将申请注册至某个外部系统，并跟着另一个用户任务，将经理的决定通知给申请人。当然也可以改为发送邮件。</span><br><span class="line"></span><br><span class="line">如果驳回，则为雇员发送一封邮件通知他。</span><br></pre></td></tr></table></figure>
 
